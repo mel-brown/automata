@@ -1,0 +1,84 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e60ef2ab2a58430d919a8754dbedb5972980ffdbfa67880797a55392df9db749
+
+name:           automata
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/mel-brown/automata#readme>
+homepage:       https://github.com/mel-brown/automata#readme
+bug-reports:    https://github.com/mel-brown/automata/issues
+author:         Melanie Brown
+maintainer:     brown.m@pm.me
+copyright:      2020 Melanie Brown
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/mel-brown/automata
+
+library
+  exposed-modules:
+      GridState
+      Square
+  other-modules:
+      Paths_automata
+  hs-source-dirs:
+      src
+  default-extensions: LambdaCase MultiWayIf TupleSections RecordWildCards BangPatterns ViewPatterns TypeApplications TypeOperators KindSignatures InstanceSigs OverloadedStrings EmptyCase GeneralizedNewtypeDeriving DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , extra
+    , linear
+    , mtl
+    , sdl2
+    , vector
+  default-language: Haskell2010
+
+executable automata-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_automata
+  hs-source-dirs:
+      app
+  default-extensions: LambdaCase MultiWayIf TupleSections RecordWildCards BangPatterns ViewPatterns TypeApplications TypeOperators KindSignatures InstanceSigs OverloadedStrings EmptyCase GeneralizedNewtypeDeriving DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      automata
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , linear
+    , mtl
+    , sdl2
+    , vector
+  default-language: Haskell2010
+
+test-suite automata-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_automata
+  hs-source-dirs:
+      test
+  default-extensions: LambdaCase MultiWayIf TupleSections RecordWildCards BangPatterns ViewPatterns TypeApplications TypeOperators KindSignatures InstanceSigs OverloadedStrings EmptyCase GeneralizedNewtypeDeriving DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      automata
+    , base >=4.7 && <5
+    , containers
+    , extra
+    , linear
+    , mtl
+    , sdl2
+    , vector
+  default-language: Haskell2010

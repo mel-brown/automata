@@ -1,0 +1,74 @@
+name:                automata
+version:             0.1.0.1
+github:              "mel-brown/automata"
+license:             BSD3
+author:              "Melanie Brown"
+maintainer:          "brown.m@pm.me"
+copyright:           "2020 Melanie Brown"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/mel-brown/automata#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - containers
+  - extra
+  - linear
+  - mtl
+  - sdl2
+  - vector
+
+default-extensions:
+  - LambdaCase
+  - MultiWayIf
+  - TupleSections
+  - RecordWildCards
+  - BangPatterns
+  - ViewPatterns
+  - TypeApplications
+  - TypeOperators
+  - KindSignatures
+  - InstanceSigs
+  - OverloadedStrings
+  - EmptyCase
+  - GeneralizedNewtypeDeriving
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveLift
+  - DeriveTraversable
+
+library:
+  source-dirs: src
+
+executables:
+  automata-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - automata
+
+tests:
+  automata-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - automata
